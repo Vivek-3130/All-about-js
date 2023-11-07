@@ -1,0 +1,868 @@
+/* ---------------------------------------Basic Javascript-------------------------------------------------*/ 
+// Word vs Keyword
+// var const let
+
+// variable and constant and let
+
+// TO store a data in your code we use the variables
+// var name = "Ashish";
+// alert(name)
+// console.log(name + ' ram');
+
+// const dulha='Pappu';
+// const dulhan='Chipkali';
+
+// Hoisting:- We can call the variable and function even beforre creatinng it.
+// var a;
+// console.log(a); it will show undefined
+// a=18;
+
+// var b;
+// console.log(b);
+// console.log(b);
+// console.log(b);
+// console.log(b);
+// b=10;
+// console.log('value of a is-',a);
+// console.log( 'value of b is-',b);
+
+// var c,d; -> c and d are not defined yet so they have value as undefined
+
+// Types in javacript:-
+//  Primitive-> number,boolean.null,undefined
+
+/*  Reference-> {}, [] , () ->aisi koi bhi value jisko copy karne par real copy nahi hota ,
+/  balki us main value ka reference pass ho jata hai, use hum reference value kahte hai 
+/  aur jiska copy karne par real copy ho jaye wo value primitive hoti hai.
+
+var a=[1,2,3];
+var b=a; yha pr b ke pass hai a ke element 
+b.pop();
+basically reference mae bhi change aayega as sara kaam address pr hota hai
+
+->How to copy one array to reference array
+var arr=[1,2,3,4,5]
+var brr=[...a]
+*/
+
+
+/* Conditionals- if , else , else-if
+if("apple"){
+    console.log('Chalega ye code as string is not empty ,hence it is a truthy value');
+}
+
+falsy values:-0 false undefined null NaN document.all
+
+*/
+/*Loops-> for, while ,do-while, for-each
+for(var i=1;i<11;++i){
+    console.log(i);
+}
+*/ 
+
+/*Functions:- 
+1.function abc(){
+    console.log('function call hoga hamesha jb bhi abc ko call krenge')
+}
+abc(); //calling abc
+
+2.function xyz(a,b,c){
+    console.log(a,b,c)
+}
+xyz(12);
+*/
+
+/*Arrays:-Group of same element
+var arr =[12,13,14,15,16];
+->pop,push,unshift(age elemet jodta hai),shift(aage ka element remove krta hai),splice(remove the element from given index(start,end))
+ */
+
+/*Object:
+1.Blank object:
+var a ={};
+
+2.Filled objects:
+var a ={
+    age:24,
+    name: 'raju',
+    addrss:'delhi',
+    phn_no:48484849659,
+    email:'aadfa@gmailn'
+    kuchbolo: function(){}//here we created a method
+}
+
+a.addrss; //accessing the objects
+a.age=58; //updating values
+
+->how to copy the object
+var obj={name:"rahul"}
+var cpyobj={...obj}
+*/
+
+
+/*Advance Javascript*/ 
+/*Var(ES5):- 1.Var function scoped hota hai
+2.it adds tself to the window object
+function xyz(){
+    for(var i=1;i<12;i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+xyz();*/
+
+
+/*let const(ES6):-1.let braces scoped hota hai
+2.it doesn't add to windows object
+function xyz(){
+    for(let i=1;i<12;i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+xyz();
+*/
+
+/*Brower Context api:- windows,stack,heap memory*/ 
+
+/*Execution context:- it is an abstract environment created by js to excecute code.
+the excecution stack is used to excecute functions and keep track of all the excecution context created*/ 
+
+
+/*Foreach sif array pr use hota hai 
+ var a=[1,2,3,4,5,6,7,8,90
+ a.forEach(function(val
+     console.log(val+2)
+ })
+*/
+
+/*For in object ke liye use hota hai 
+var a ={
+    age:24,
+    name: 'raju',
+    addrss:'delhi',
+    phn_no:48484849659,
+    email:'aadfa@gmailn'
+}
+for (var key in a) {
+    // console.log(key);
+    console.log(key,":",a[key]);
+}
+*/
+
+
+/*A callback is a function passed as an argument to another function
+This technique allows a function to call another function
+A callback function can run after another function has finished 
+setTimeout(function(){
+    console.log('2 sec baad chalega');
+},2000);
+*/
+
+/*First class function are function in which we can use function as a variable
+var a=func(){}
+*/
+
+// let products = [
+//     {name: 'iPhone', price: 900},
+//     {name: 'Samsung Galaxy', price: 850},
+//     {name: 'Sony Xperia', price: 700}
+// ];
+
+// console.log('Products sorted by name:');
+// products.sort();
+
+// console.table(products);
+
+/* Arrays in js are the object of array class it is represented as a key value pairs with index
+Array.isarray([]) -> true
+Array.isarray({}) -> false*/
+
+/*How to delete a prop from an object
+var a={
+    age:89,
+    name:'gdhsvf'
+}
+
+delete a.age;*/
+//console.log("after deleting ",a);//undefined
+
+
+/*--------------------------------------------Sync/Async Function----------------------------------------------*/
+
+/*
+Sync:Ek kaam jb tk khtm nhi hoga tb tk koi bhi dusra kaam nhi hoga.
+Async:strting the work together on same tym aur vo apne tym pr khtm hota rahega
+ */
+
+// setTimeout(callback,timeinms)
+// setTimeout(function(){
+//     console.log('2sec after'); ye pehle side stack me jayega fir ye complete hine ke baad main stack
+// },2000)
+
+/*Promises*/ 
+// var ans =new Promise((resolve,reject) =>{
+//     var n =Math.floor(Math.random()*10); //gives number from 1 to 9
+//     if(n%2===0){
+//         return resolve();
+//     }
+//     else{
+//         return reject();
+//     }
+// })
+
+// ans.then ( function() {
+//     console.log("No is even");
+// } )
+// .catch(function(){
+//     console.log("No is odd");
+// })
+
+
+/*PROMISE CHAINING*/ 
+// var tym = new Promise(function(resolve,reject){
+//     return resolve("sabse pehle ghar pr aao");
+// })
+
+// var p2 = tym.then(function(data){
+//     console.log(data); //pehla promise complete
+//      return new Promise(function(resolve,reject){ //dusra promise start kro aur resolve kro
+//         return resolve("gate kholo aur gate lagao");
+//     })
+// })
+
+// var p3 = p2.then(function(data){
+//     console.log(data);
+//      return new Promise(function(resolve,reject){ //teesra promise start kro aur resolve kro
+//         return resolve("khana pakao aur khana khao");
+//     })
+// })
+
+// var p4 = p3.then(function(data){
+//     console.log(data);
+//     return new Promise(function(resolve,reject){ //chautha promise start kro aur resolve kro
+//         return resolve("incognito mode chalao");
+//     })
+// })
+
+//  var p5 = p4.then(function(data){
+//     console.log(data);
+//     return new Promise(function(resolve,reject){ //pachwa promise start kro aur resolve kro
+//         return resolve("lights off kro");
+//     })
+// })
+
+// var p6 = p5.then(function(data){
+//     console.log(data);
+//     return new Promise(function(resolve,reject){ //chatha promise start kro aur resolve kro
+//         return resolve("so jao tum thak gye ho");
+//     })
+// })
+
+// p6.then(function(data){
+//     console.log(data);
+// })
+
+
+/*Async/Awaits*/
+// async function abcd(){
+//     let raw = await fetch('https://randomuser.me/api/'); //pehle ye complete hoga tb data vali line chalgi
+//     let data = await raw.json();
+//     console.log(data);
+    
+// } 
+// abcd();
+
+
+/*Higher Order Function:-A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
+ There are several different types of higher order functions like map and reduce.
+ 
+function callbackFunction(){
+    console.log('I am  a callback function');
+}
+
+// higher order function
+function higherOrderFunction(func){
+    console.log('I am higher order function')
+    func()
+}
+
+higherOrderFunction(callbackFunction);
+*/
+
+/*Constructor function:- A constructor is a special function that creates and initializes an object instance of a class.
+ In JavaScript, a constructor gets called when an object is created using the new keyword.
+ 
+ function User (name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var user1 = new User('Bob', 25);
+var user2 = new User('Alice', 27);
+*/
+
+
+/*First Class Functions:-Functions are first-class citizens in JavaScript.
+ In other words, you can treat functions like values of other types.
+ i.e store that particular function inside a variable and then call it
+function cmToIn(length) {
+    return length / 2.54;
+}
+
+function inToCm(length) {
+    return length * 2.54;
+}
+
+function convert(fn, length) {
+    return fn(length);
+}
+
+let inches = convert(cmToIn, 10);
+console.log(inches);
+
+ */
+
+// For creating private variables we can use iife-immediately invoked fucntion expression.
+/*var ans = (fucntion(){
+    var myName='Raj'; //private variable
+
+    return{
+        getter : function(){
+            console.log(myName); //this how we can access our private value,using getter inside return
+        }
+
+        setter : function(){
+            myName = val;  //this how one can update the value of private variable
+        }
+    }
+})
+
+how to access:-
+myName.getter = 12
+myName.setter(24)  -----------here we updated the value
+myName.getter = 24
+*/
+
+/*Prototype:-
+
+In JavaScript, objects can inherit features from one another via prototypes.
+Every object has its own property called prototype.
+Because a prototype itself is also another object, the prototype has its own prototype.
+This creates a something called prototype chain. 
+The prototype chain ends when a prototype has null for its own prototype.
+
+i.e The prototype is an object which contains properties shared by all instances created using this constructor.
+
+Example1:-
+
+var obj = {name : "pappu"}
+undefined
+
+obj
+{name: 'pappu'}
+name: "pappu"
+
+[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf:
+ ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString:
+  ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__:
+   ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__:
+    ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__:
+     ƒ __proto__()set __proto__: ƒ __proto__()
+
+obj.name
+'pappu'
+
+Example 2:-
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+Person.prototype.nationality = "English"; //here we have added one more property using prototype function
+
+const myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"The nationality of my father is " + myFather.nationality;
+
+Example3:-
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+Person.prototype.name = function() {      //here we added new method to person object using prototype
+  return this.firstName + " " + this.lastName
+};
+
+const myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.name();
+*/
+
+/* Prototypal inheritance:-
+1. Prototypal inheritance is a language feature in JavaScript that allows objects to inherit properties from another object via the prototype linkage.
+
+2. Prototypal inheritance allows objects and methods to be shared, extended, and copied.
+   It is used to add new properties and methods to an existing object constructor,
+   and JS code can inherit properties from a prototype.
+
+Example1:-
+
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// we can find both properties in rabbit now:
+alert( rabbit.eats ); // true (**)
+alert( rabbit.jumps ); // true
+
+Example 2:-
+
+let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+// walk is taken from the prototype
+rabbit.walk(); // Animal walk
+*/
+
+/*Closures:-Closure means that an inner function always has access to the vars and parameters of its outer function(basically everything that exist inside the lexical environment),
+even after the outer function has returned.
+
+Example 1:-
+
+function makeCounter (n) {
+    return function () {
+        n= n + 2;
+        return n;
+    } 
+};
+var counterA=makeCounter(5);
+var counterB=makeCounter(70);//(*)
+console.log('counter A value:',counterA());
+console.log('counter B value',counterB());
+
+Example 2:-
+function Counter() {
+    
+    var counter = 0;
+
+    setTimeout( function () {
+        var innerCounter = 0;
+        counter += 1;
+        alert("counter = " + counter);
+
+        setTimeout( function () {
+            counter += 1;
+            innerCounter += 1;
+            alert("counter = " + counter + ", innerCounter = " + innerCounter)
+        }, 500);
+
+    }, 1000);
+};
+
+Counter();
+
+*/
+
+/*What is Event Loops?
+ ->
+The event loop is a mechanism in JavaScript that allows the execution of asynchronous code.
+It is a continuous loop that monitors the call stack and
+checks if there are any callback functions that need to be executed.
+The event loop continues to run until there are no more callback functions
+to execute and the call stack is empty.
+
+Example 1:-
+
+console.log('Start');
+
+setTimeout(() => {
+ console.log('Timeout');
+}, 3000); //callbackqueues
+
+Promise.resolve().then(() => {
+ console.log('Promise');
+}); //microtaskqueue
+
+console.log('End');
+
+The output will be::-
+Start
+End
+Promise
+Timeout
+
+
+->This is because the `setTimeout` and `Promise.then` functions are asynchronous and they are added to the event loop.
+ The event loop will execute these functions after the current synchronous code has finished executing.
+*/ 
+
+// Microtaskqueue >>>>>(priority)>>>>Callbackqueue
+//  what are microtask queue in javascript (these contain mainly the promises and some other mutations)
+//  https://stackoverflow.com/questions/25915634/microtasks-queues-in-javascript
+
+
+/*----------------------------------Map , Filter & Reduce Methods In JavaScript-------------------------------*/
+
+/*-----MAP------*/ 
+const arr = [5, 1, 3, 2, 6];
+
+//Convert to these types
+
+
+// Double - [10, 2, 6, 4, 12]
+// function double(x){
+//     return x*2;
+// }
+// const output=arr.map(double);
+// console.log(output);
+
+// Triple - [15, 3, 9, 6, 18]
+
+// function triple(x){
+//     return x*3;
+// } 
+// const output1=arr.map(triple);
+// console.log(output1);
+
+// Binary - ['101', '1', '11', '10', '110']
+
+// function binary(x){
+//     return x.toString(2);
+// }
+// const output2=arr.map(binary);
+// console.log(output2);
+
+/*--------------------FILTER-----------------*/
+
+//Filter all the odd vaues
+
+// function isOdd(x){
+//     return x%2;
+// }
+// console.log(arr.filter(isOdd));
+
+//filter even values
+// function isEven(y){
+//     return y % 2 === 0;
+// }
+// console.log(arr.filter(isEven));
+
+
+/*-----------REDUCE-------------*/
+/*
+The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array,
+in order, passing in the return value from the calculation on the preceding element.
+The final result of running the reducer across all elements of the array is a single value.
+
+The first time that the callback is run there is no "return value of the previous calculation".
+If supplied, an initial value may be used in its place.
+Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+=>Syntax for reduce fuction:- arr.reduce(callback(accumulator, currentValue), initialValue
+
+=>The reducer walks through the array element-by-element, at each step adding the current array value to the result
+from the previous step (this result is the running sum of all the previous steps) — until there are no more elements to add.
+
+*/
+
+//Find the sum
+//-----------------------------------------------
+/*
+const op = arr.reduce(function(access,current){
+    return (access+ current) ;
+},10); //sum of array elements with initial value as 10
+console.log(op);
+*/
+
+
+//-----------------------------------------------
+
+/*
+function reducer(accumulator, currentValue, index) {
+    const returns = accumulator + currentValue;
+    console.log(
+      `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+    );
+    return returns;
+  }
+  
+arr.reduce(reducer);
+
+*/
+
+// Find the maximum element of arr
+
+/*const maxi=arr.reduce(function(max,curr){ //here we have assing max as 0
+    if(curr > max){
+        max = curr; 
+    }
+    return max;
+},0);
+
+console.log("maximum number",maxi);
+*/
+
+/*EXAMPLES------------------------------*/ 
+ const user = [
+    {firstname : "John" , lastname:"kukur" , age : 23 },
+    {firstname : "Jane" , lastname:"passi" , age : 45 },
+    {firstname : "bunny", lastname:"haddi" , age : 78 },
+    {firstname : "hippo", lastname:"chaman", age : 23 },
+ ];
+
+//list of fullnames of user
+/*console.log(user.map( (item) => {   //here item is the object
+    return item["firstname"]+" "+item["lastname"];
+    })
+)*/
+
+//object and value of different age
+/*
+const op = user.reduce(function(acc,curr){
+    if(acc[curr.age]){
+        acc[curr.age] = ++acc[curr.age];
+    }
+    else{
+        acc[curr.age] = 1;
+    }
+    return acc;
+},{}) //here we are creating empty array naming acc initializing it by {}, and iterating through each object.age as curr value
+
+console.log(op);
+*/
+//we need to find the fisrtnanme of the user whose age is less than 30
+
+const op1 = user
+.filter((x) => x.age<30)  
+.map((x) => x.firstname);
+
+//here we map the value which was given by the filter method to use,known a chaining
+console.log(op1);
+
+
+/*------------------------HIGHER ORDER FUNCTIONS & ARRAYS METHODS-------------------------------------*/
+
+const companies = [
+    {name: "Company One"  , category: "Finance"   , start: 1981, end: 2003},
+    {name: "Company Two"  , category: "Retail"    , start: 1992, end: 2008},
+    {name: "Company Three", category: "Auto"      , start: 1999, end: 2007},
+    {name: "Company Four" , category: "Retail"    , start: 1989, end: 2010},
+    {name: "Company Five" , category: "Technology", start: 2009, end: 2014},
+    {name: "Company Six"  , category: "Finance"   , start: 1987, end: 2010},
+    {name: "Company Seven", category: "Auto"      , start: 1986, end: 1996},
+    {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+    {name: "Company Nine" , category: "Finance"   , start: 1981, end: 1989},
+];
+
+const ages=[33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+//Normal For Loop
+for(let i=0; i< companies.length; i++){
+    console.log(companies[i]);
+}
+
+//For each
+companies.forEach(company=>{
+    console.log(`Name : ${company.name}`);
+});
+
+//Filter
+// let canDrink=[];
+// for(let i =0; i< ages.length; i++){
+//     if(ages[i] >=21){
+//         canDrink.push(ages[i]);
+//     }
+// }
+
+// console.log("These ages can drink",canDrink)
+
+// const canDrink = ages.filter((x)=>{
+//     return x>=21 ; //returns true or false based on condition
+// })
+// console.log('these people are eligible to drink', canDrink);
+
+
+// const retailname=companies.filter((x)=>{
+//     return (x.category === 'Retail');
+// })
+// console.log('retail names:',retailname );
+
+
+// const eightiescomp=companies.filter((eighties)=>{
+//     return ((eighties.start>1980 && eighties.end <1990));
+// });
+// console.log("Companies started in 80's are as follows: ",eightiescomp);
+
+
+// Maps
+
+// Create array of companies name
+
+// const companyNames = companies.map(function(company){
+//     return company.name;
+// })
+// console.log(companyNames)
+
+// const testMaps = companies.map(function(company){
+//     return `${company.name} : [${company.start} - ${company.end}]`;
+// })
+// console.log(testMaps);
+
+// const sqrAges=ages.map((x)=>{
+//     return Math.pow(x,2);
+// })
+// console.log(sqrAges)
+
+// sort
+
+// const sortComp= companies.sort((c1,c2)=>{
+//     if(c1.start > c2.start){
+//         return 1;
+//     }
+//     else{
+//         return -1
+//     }
+// });
+// console.log(`Sorted Companies by start date`,sortComp );
+
+// const sortedCompanies =  companies.sort((a,b)=>{
+//     a.start > b.start ? 1: -1;
+// })
+// console.log(sortedCompanies)
+
+
+// Reduce
+// let sum = 0;
+// for(let i =0; i< ages.length; i++){
+//     sum=sum+ages[i];
+// }
+// console.log(sum)
+
+// const ageSum =  ages.reduce((total,age)=>{
+//     return total=total+age;
+// },0);
+// console.log("Age Sum: ",ageSum );
+
+// GEt total years for all companies
+
+// const totalYears = companies.reduce((total,years)=>{
+//     return (total + (years.end - years.start)); //total sum of year till companies run
+//     // return (total + (years.start + years.end)); //total year sum
+// },0) //here total = 0
+// console.log('Total Years:',totalYears );
+
+// Combine methods
+
+// const combined = ages
+// .map(age => age *2) //this will double the value of every element present in array ages
+// .filter(age => age >=40) //this will filter the ages above 40
+// .sort((a,b) => a-b) //it will sort the array in asecending order
+// .reduce((total,age)=>{
+//     return total+=age;
+// } ,0 ) //after this the sum will get printed
+
+
+// console.log(combined);
+
+
+/*---------------------------------------Export & Import In Javascript---------------------------------------*/ 
+function multiply(a , b, c){
+    return a*b*c;
+}
+
+function addition(a , b, c){
+    return a+b+c;
+}
+
+export{
+    multiply as mul,
+    addition as add
+}
+/* 
+This how we imported the multiply function from javascript.js to higherarray.js, uisng type as "module" in html.
+
+import { multiply } from "./javascript.js";
+or
+import { multiply as mul } from "./javascript.js";
+import {add} from "./javascript.js";
+
+or
+import {multiply,add} from "./javascript.js"
+
+const result = mul(2,3,5);
+const result1=add(5,9,6);
+console.log("The Result Of exported function : ",result," & ",result1);
+
+or
+To import all the methods of one file to other:-
+
+import * as javacript from "./javascript.js"
+const result = javacript.mul(2,3,5);
+const result1= javacript.add(5,9,6);
+console.log("The Result Of exported function : ",result," & ",result1);
+
+*/
+
+export const student_rollno = 44; //we can also import the no of variables we want in our code
+// console.log("The Variable that got exported is: ",javacript.student_rollno);
+
+// Default export : --------------- KOi ek hi function ke aaeg hum default lga sakte hai vrna erroe dega
+// function multiply(a , b, c){
+//     return a*b*c;
+// }
+// //we can alsa export function as default
+// export default function addition(a , b, c){
+//     return a+b+c;
+// }
+// //we have to write this :- import (any name without curlu braces) from ".javascript.js"
+// //we can rename the default export
+
+// export{
+//     multiply as mul
+// }
+
+/*-----------------------------------------Try & Catch Blocks In Javacript----------------------------------------------*/
+// try and catch blocks
+// try{
+//     console.log(age);
+// }
+// catch(err){
+//     alert(err.name);
+//     console.log(err.message);
+// }
+// finally{
+//     console.log(`This is always executed`);
+// }
+
+// const a = 2*9;
+// console.log(`The result is ${a}`);
+
+// try {
+//     const res = prompt("Are You A Robot?");
+//     if(res ==='Y'){
+//         throw new Error('Robot Found')
+//     }
+// }
+// catch (error) {
+//     console.log(error.name,error.message);
+// }

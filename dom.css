@@ -1,0 +1,25 @@
+.container{
+    background-color: teal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    padding: 30px;
+    row-gap: 10px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(185, 206, 47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.round-border{
+    border-radius: 50%;
+    border: 5px solid black;
+}
